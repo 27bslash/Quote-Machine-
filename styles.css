@@ -34,12 +34,14 @@ h1{
     color: black;
 }
 #author {
+
 }
 #author p{
     font-size: 1.5em;
 
 }
-#control-wrap{
+#control-wrap {
+    border: dotted red;
     margin-top: 10%;
 }
 button {
