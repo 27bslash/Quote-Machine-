@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #318d4c;
+}
+
+h1{
+
+}
+#quote-box {
+    border-radius: 3px;
+    display: flex;
+    background-color: #fff;
+    padding: 40px;
+    height: auto;
+    width: 450px;
+    text-align: right;
+    flex-direction: column;
+}
+#text {
+    padding: 10px 20px 10px 20px;
+    border: dotted red;
+}
+#text p{
+    
+    height: auto;
+    text-align: left;
+    font-size: 1.4em;
+    font-weight: 400;
+    color: black;
+}
+#author {
+}
+#author p{
+    font-size: 1.5em;
+
+}
+#control-wrap{
+    margin-top: 10%;
+}
+button {
+    background-color: #318d4c;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+}
+button:hover{
+opacity: 0.9;
+
+}
+#tweet-quote {
+    float: left;
+}
