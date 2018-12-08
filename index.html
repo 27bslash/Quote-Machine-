@@ -11,22 +11,22 @@
 
 <body>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <h1>Quote Machine</h1>
     <div id="quote-box">
         <div id="text">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, ducimus! Et est aperiam recusandae
-                tempora repellendus magni dicta minima, corrupti ullam voluptatum illo accusantium voluptatem. Incidunt
-                magni sunt id nam.
+            <p id='quote-text'>
             </p>
         </div>
         <div id="author">
-            <p>author-author</p>
+            <p id='author-text'>author-author</p>
         </div>
         <div id="control-wrap">
-            <Button id="tweet-quote">Tweet Quote</button>
-            <Button id="new-quote">New Quote</Button>
+            <a class='button'  id="tweet-quote" title='tweet-quote' target ='_blank'>Tweet Quote</a>
+            <Button class='button' id="new-quote">New Quote</Button>
         </div>
     </div>
+    <script src='App.js'></script>
 </body>
 
 </html>
