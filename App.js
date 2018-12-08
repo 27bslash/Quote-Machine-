@@ -38,9 +38,8 @@ function displayQuote(quote, author) {
   quoteText.textContent = quote;
   authorText.textContent = author;
 }
-function displayAuthor() {
-  
-}
+
+
 
 const getRandomQuote = () => {
   const i = Math.floor(Math.random() * 5)
