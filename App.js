@@ -1,38 +1,48 @@
 
 
 
+
+/// TO DO fade in on text// 
 const apiUrl = 'https://quote-api.glitch.me/pull/1';
 
 
-
-
+var colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32", "#BDBB99", "#77B1A9", "#73A857"];
 
 var quoteText = document.getElementById('quote-text');
 var authorText = document.getElementById('author-text');
 
 
-var currentQuote = ''
-var currentAuthor = ''
 
 const handleClick = () => {
   getQuotes()
-  console.log('tesr')
+  changeColor()
+}
+
+function changeColor() {
+  var color = Math.floor(Math.random() * colors.length)
+  console.log(color);
+  document.body.style.backgroundColor = colors[color]
+  document.body.style.color = colors[color]
+  document.body.style.transition = 'all 1s'
+  document.getElementsByClassName('text').body.style.color.transition = 'all 1s'
+
 }
 
 function getQuotes() {
   axios.get(apiUrl)
     .then((res) => {
       console.log(res)
-      displayQuote(res.data[0].body , res.data[0].author)
-      currentQuote = res.data[0].body
-      currentAuthor = res.data[0].author
+      displayQuote(res.data[0].body , "-" + " " + res.data[0].author)
     })
     .catch((error) => {
       console.log('error');
     })
 }
 
-
+function init() {
+  getQuotes();
+  changeColor();
+}
 
 function displayQuote(quote, author) {
   quoteText.textContent = quote;
@@ -41,26 +51,10 @@ function displayQuote(quote, author) {
 
 
 
-const getRandomQuote = () => {
-  const i = Math.floor(Math.random() * 5)
-
-  
-
-}
-
-/*const getQuote = () => {
-  let randomQuote = getRandomQuote()
-
-  currentQuote = randomQuote.quote
-  currentAuthor = randomQuote.author
-}
-*/
-
 const newQuoteButton = document.getElementById('new-quote');
 newQuoteButton.addEventListener('click', handleClick, false)
 
 const tweetQuote = document.getElementById('tweet-quote');
 tweetQuote.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + '"' + currentQuote + '" ' + currentAuthor);
-
-getQuotes()
-
+ 
+init()
