@@ -1,18 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 body {
     margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'railway';
     justify-content: center;
     background-color: #318d4c;
 }
 
-h1{
-
-}
 #quote-box {
-    border-radius: 3px;
+    border-radius: 5px;
     display: flex;
     background-color: #fff;
     padding: 40px;
@@ -21,40 +20,61 @@ h1{
     text-align: right;
     flex-direction: column;
 }
+
 #text {
     padding: 10px 20px 10px 20px;
-    border: dotted red;
 }
-#quote-text{
-    
+
+#quote-text {
     height: auto;
     text-align: left;
-    font-size: 1.4em;
+    font-size: 1.9em;
     font-weight: 400;
 }
-#author {
 
-}
 #author-text {
     font-size: 1.5em;
-
 }
+
 #control-wrap {
-    border: dotted red;
     margin-top: 10%;
 }
+
 .button {
-    background-color: #318d4c;
     padding: 10px;
     border-radius: 5px;
     color: white;
     float: right;
 }
 
-.button:hover{
-opacity: 0.9;
-
+.button2 {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    float: right;
 }
+
+.show {
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+
+.button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.button2:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
 #tweet-quote {
     float: left;
+    text-decoration: none
 }
