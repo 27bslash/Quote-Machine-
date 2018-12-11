@@ -28,7 +28,7 @@ body {
 #quote-text {
     height: auto;
     text-align: left;
-    font-size: 1.9em;
+    font-size: 1.75em;
     font-weight: 400;
 }
 
@@ -37,18 +37,18 @@ body {
 }
 
 #control-wrap {
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .button {
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     color: white;
     float: right;
 }
 
 .button2 {
-    padding: 10px;
+    padding: 15px;
     border-radius: 5px;
     color: white;
     float: right;
