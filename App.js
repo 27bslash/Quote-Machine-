@@ -2,7 +2,7 @@
 
 
 
-/// TO DO fade in on text// 
+
 const apiUrl = 'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json';
 
 
@@ -36,8 +36,16 @@ function changeColor() {
   btn2.style.transition = 'all 1s'
 
 }
-function getRandom(arg) {
-  
+
+function fadeIn(event) {
+  quoteText.classList.add('fade')
+  authorText.classList.add('fade')
+
+}
+function fadeOut(event) {
+  quoteText.classList.remove('fade')
+  authorText.classList.remove('fade')
+
 }
 
 function getQuotes() {
@@ -45,13 +53,19 @@ function getQuotes() {
     .then((res) => {
       console.log(res)
       quoteData = res.data.quotes
-      displayQuote(quoteData[Math.floor(Math.random() * res.data.quotes.length)].quote, "-" + " " + quoteData[Math.floor(Math.random() * res.data.quotes.length)].author)
-      tweetQuote.setAttribute('href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent('"' + quoteText.innerHTML + '" ' + authorText.innerHTML));
+      fadeIn(quoteText, authorText)
+      setTimeout(() => {
+        displayQuote(quoteData[Math.floor(Math.random() *
+          res.data.quotes.length)].quote, "-" + " " + quoteData[Math.floor(Math.random() * res.data.quotes.length)].author)
+      }, 800)
+      tweetQuote.setAttribute(
+        'href', 'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' + encodeURIComponent(
+          '"' + quoteText.innerHTML + '" ' + authorText.innerHTML));
     })
     .catch((error) => {
       console.log('error');
     })
-}
+};
 
 function init() {
   getQuotes();
@@ -63,7 +77,14 @@ function displayQuote(quote, author) {
   quoteText.textContent = quote;
   authorText.textContent = author;
 }
-
+newQuoteButton.addEventListener('click', function () {
+  if (quoteText.className.indexOf('fade') === -1 && authorText.className.indexOf('fade') === -1) {
+    fadeIn(quoteText, authorText)
+  }
+  else {
+    fadeOut(quoteText, authorText)
+  }
+})
 newQuoteButton.addEventListener('click', handleClick, false)
 
 document.addEventListener('DOMContentLoaded', function () {

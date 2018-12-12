@@ -1,5 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500);
 body {
+    background-color: #333;
     margin: 0;
     height: 100vh;
     display: flex;
@@ -7,7 +8,6 @@ body {
     align-items: center;
     font-family: 'railway';
     justify-content: center;
-    background-color: #318d4c;
 }
 
 #quote-box {
@@ -34,13 +34,23 @@ body {
 
 #author-text {
     font-size: 1.5em;
+    margin: 0;
 }
 
 #control-wrap {
     margin-top: 5%;
 }
-
+.fade {
+    position: relative;
+    animation: fade 1.5s ease-in-out;
+}
+@keyframes fade {
+    from {opacity: 1;}
+    50% {opacity: 0;}
+    to {opacity: 1;}
+}
 .button {
+    background-color: #333;
     padding: 15px;
     border-radius: 5px;
     color: white;
@@ -48,6 +58,7 @@ body {
 }
 
 .button2 {
+    background-color: #333;
     padding: 15px;
     border-radius: 5px;
     color: white;
@@ -55,16 +66,17 @@ body {
 }
 
 .button:hover {
-    opacity: 0.9;
+    opacity: 0.8;
     cursor: pointer;
 }
 
 .button2:hover {
-    opacity: 0.9;
+    opacity: 0.8;
     cursor: pointer;
 }
 
 #tweet-quote {
     float: left;
+    color: white;
     text-decoration: none
 }
